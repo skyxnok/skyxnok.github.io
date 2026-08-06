@@ -1,2 +1,2 @@
-# skyxnok.io
+# skyxnok.github.io
 my website

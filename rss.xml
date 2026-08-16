@@ -1,4 +1,83 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>SkyのXnok</title><description>No description</description><link>https://201562.xyz/</link><templateTheme>halcyon</templateTheme><templateThemeVersion>1.0.0</templateThemeVersion><lastBuildDate>2026年8月16日 09:28:57</lastBuildDate><item><title>友链头像本地化：让头像不再加载缓慢</title><link>https://201562.xyz/posts/localize-friend-avatars/</link><guid isPermaLink="true">https://201562.xyz/posts/localize-friend-avatars/</guid><description>友链页面的头像都指向对方站点，加载慢还容易挂。把头像下载到本地、静态转 AVIF、动图原样保留，并写进构建流程自动同步的实践记录。</description><pubDate>Sun, 09 Aug 2026 07:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;&lt;p&gt;友链页面的头像本来都是直接引用对方站点的图片链接，访问慢不说，对方站点一挂头像就裂。这篇记录我把头像全部「本地化」的过程：下载到自己的仓库、静态图转 AVIF 压缩、动图原样保留，并且做成了 &lt;code&gt;npm run build&lt;/code&gt; 自动执行的脚本。&lt;/p&gt;&lt;/blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>SkyのXnok</title><description>No description</description><link>https://201562.xyz/</link><templateTheme>halcyon</templateTheme><templateThemeVersion>1.0.0</templateThemeVersion><lastBuildDate>2026年8月16日 13:36:06</lastBuildDate><item><title>macOS 下 OpenEmu 安装与使用教程</title><link>https://201562.xyz/posts/openemu-setup/</link><guid isPermaLink="true">https://201562.xyz/posts/openemu-setup/</guid><description>用 OpenEmu 在 Mac 上一站式玩转 NES、GBA、PS1、NDS 等 25+ 平台老游戏：安装、添加 ROM、BIOS、手柄、存档与金手指全攻略。</description><pubDate>Sun, 16 Aug 2026 02:00:00 GMT</pubDate><content:encoded>&lt;p&gt;OpenEmu 是 macOS 上最流行的免费开源复古游戏模拟器：把 NES、SNES、GBA、NDS、PS1、N64、GameCube 等 25+ 平台的老游戏统一收进一个「类 iTunes」的游戏库里，拖入 ROM 自动识别平台、自动下载封面，开箱即用。&lt;/p&gt;
+&lt;section&gt;&lt;h2&gt;为什么选 OpenEmu&lt;a href=&quot;#为什么选-openemu&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;一站式&lt;/strong&gt;：一个 App 集合几十个平台的模拟核心，不用分别装十几款模拟器&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;游戏库管理&lt;/strong&gt;：自动整理封面、简介、平台分类，搜索和浏览体验像音乐 App&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;免费开源&lt;/strong&gt;：完全免费，代码开源，无广告无内购&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;体验现代&lt;/strong&gt;：原生支持手柄、云存档槽、显示滤镜、金手指，界面漂亮&lt;/li&gt;
+&lt;/ul&gt;&lt;/section&gt;
+&lt;section&gt;&lt;h2&gt;系统要求&lt;a href=&quot;#系统要求&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;官方版（OpenEmu 2.4.1）&lt;/strong&gt;：Intel 版，M 系列芯片的 Mac 需要 Rosetta 2 转译运行，首次打开时系统会提示安装 Rosetta&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;M 系列用户推荐&lt;/strong&gt;：社区维护的原生 ARM 分支 &lt;a href=&quot;https://github.com/OpenEmu/OpenEmu-Silicon&quot; target=&quot;_blank&quot;&gt;OpenEmu-Silicon&lt;/a&gt;，支持 macOS 11.0+，在 Sequoia / Tahoe 上测试可用，性能和兼容性更好&lt;/li&gt;
+&lt;/ul&gt;&lt;blockquote&gt;&lt;p&gt;判断方法：点击左上角  →「关于本机」，芯片是「Apple M1/M2/M3…」就是 M 系列，选 OpenEmu-Silicon；是 Intel 就用官方版。&lt;/p&gt;&lt;/blockquote&gt;&lt;/section&gt;
+&lt;section&gt;&lt;h2&gt;安装步骤&lt;a href=&quot;#安装步骤&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;打开官网 &lt;a href=&quot;https://openemu.org/&quot; target=&quot;_blank&quot;&gt;openemu.org&lt;/a&gt;（或 GitHub Releases）下载最新版 dmg&lt;/li&gt;
+&lt;li&gt;双击 dmg，把 OpenEmu 图标&lt;strong&gt;拖进 Applications 文件夹&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;首次打开若提示「无法验证开发者」，去 &lt;strong&gt;系统设置 → 隐私与安全性&lt;/strong&gt;，在下方点击「仍要打开」&lt;/li&gt;
+&lt;li&gt;打开后会先让你选择默认支持的游戏平台（后面随时可以在设置里改），然后进入主界面&lt;/li&gt;
+&lt;/ol&gt;&lt;/section&gt;
+&lt;section&gt;&lt;h2&gt;添加游戏&lt;a href=&quot;#添加游戏&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;直接把 ROM 文件拖进 OpenEmu 窗口即可：&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;自动识别平台&lt;/strong&gt;：根据文件扩展名自动归类，比如 &lt;code&gt;.nes&lt;/code&gt;、&lt;code&gt;.sfc&lt;/code&gt;、&lt;code&gt;.gba&lt;/code&gt;、&lt;code&gt;.nds&lt;/code&gt;、&lt;code&gt;.iso&lt;/code&gt; / &lt;code&gt;.cue&lt;/code&gt;（PS1）等&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自动下载封面&lt;/strong&gt;：联网后自动从数据库匹配封面图和简介，也可右键 →「编辑封面」手动替换&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ROM 会被复制入库&lt;/strong&gt;：默认存放在 &lt;code&gt;~/Library/Application Support/OpenEmu/Game Library/&lt;/code&gt;，入库后原来的文件可以删掉&lt;/li&gt;
+&lt;li&gt;常用按键：双击启动游戏，按 &lt;code&gt;Esc&lt;/code&gt; 返回游戏库，右键游戏可管理存档、封面、删除&lt;/li&gt;
+&lt;/ul&gt;&lt;/section&gt;
+&lt;section&gt;&lt;h2&gt;BIOS 文件（PS1 等光盘平台需要）&lt;a href=&quot;#bios-文件ps1-等光盘平台需要&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;PS1、Saturn、PC Engine CD 这类光盘平台需要 BIOS 才能运行。把 BIOS 文件直接拖进 OpenEmu 窗口即可自动入库。&lt;/p&gt;&lt;p&gt;PS1 常见 BIOS 文件：&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;文件&lt;/th&gt;&lt;th&gt;对应区域&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;scph5500.bin&lt;/code&gt;&lt;/td&gt;&lt;td&gt;日版（NTSC-J）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;scph5501.bin&lt;/code&gt;&lt;/td&gt;&lt;td&gt;美版（NTSC）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;scph5502.bin&lt;/code&gt;&lt;/td&gt;&lt;td&gt;欧版（PAL）&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;blockquote&gt;&lt;p&gt;注意文件名要完全一致，包括大小写；三个都放进去最省心。&lt;/p&gt;&lt;/blockquote&gt;&lt;/section&gt;
+&lt;section&gt;&lt;h2&gt;手柄连接与配置&lt;a href=&quot;#手柄连接与配置&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Xbox Series X/S、DualShock 4、DualSense、Switch Pro 等手柄连接 Mac 后会被自动识别&lt;/li&gt;
+&lt;li&gt;到 &lt;strong&gt;OpenEmu → 设置 → Controls&lt;/strong&gt; 里可以调整按键映射、按键连发等&lt;/li&gt;
+&lt;li&gt;键盘默认映射也很完整（方向键 + &lt;code&gt;X&lt;/code&gt;/&lt;code&gt;Z&lt;/code&gt; 等），没有手柄也能玩&lt;/li&gt;
+&lt;/ul&gt;&lt;/section&gt;
+&lt;section&gt;&lt;h2&gt;快捷键与存档&lt;a href=&quot;#快捷键与存档&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;OpenEmu 的存档体验接近现代主机，不用依赖游戏内的存档点：&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;保存存档&lt;/strong&gt;：游戏中按 &lt;code&gt;Cmd + S&lt;/code&gt;（或在 HUD 工具栏点存档图标）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;载入存档&lt;/strong&gt;：游戏中按 &lt;code&gt;Cmd + L&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;存档槽&lt;/strong&gt;：右键游戏库里的游戏 →「存档」，可以管理多个存档槽位，随时切换&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;游戏内暂停&lt;/strong&gt;：&lt;code&gt;Cmd + P&lt;/code&gt;（部分核心支持）&lt;/li&gt;
+&lt;/ul&gt;&lt;/section&gt;
+&lt;section&gt;&lt;h2&gt;显示滤镜&lt;a href=&quot;#显示滤镜&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;想找回当年的屏幕质感？游戏窗口底部 HUD 工具栏有滤镜图标，可选：&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;CRT 滤镜&lt;/strong&gt;：扫描线、球面变形，还原显像管电视效果&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LCD 滤镜&lt;/strong&gt;：还原 Game Boy 那种像素颗粒感&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Smooth 平滑&lt;/strong&gt;：画面更柔和的放大效果&lt;/li&gt;
+&lt;/ul&gt;&lt;/section&gt;
+&lt;section&gt;&lt;h2&gt;金手指（Cheat Code）&lt;a href=&quot;#金手指cheat-code&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;支持 Game Genie、GameShark、Pro Action Replay 格式：&lt;/p&gt;&lt;ol&gt;
+&lt;li&gt;游戏中打开 &lt;strong&gt;Controls → Insert Cheat Code&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;粘贴代码并起个名字，勾选启用即可&lt;/li&gt;
+&lt;/ol&gt;&lt;/section&gt;
+&lt;section&gt;&lt;h2&gt;常见问题&lt;a href=&quot;#常见问题&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;游戏没声音&lt;/strong&gt;：到 &lt;strong&gt;设置 → 核心&lt;/strong&gt; 里检查对应平台核心的音频选项&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;N64 游戏崩溃 / 花屏&lt;/strong&gt;：右键游戏 →「Open With」，换一个视频插件（如 Rice / GlideN64）试试&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;打开提示「已损坏」或无法验证&lt;/strong&gt;：系统设置 → 隐私与安全性 →「仍要打开」&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PS1 游戏不加载&lt;/strong&gt;：检查 BIOS 文件名是否正确（含大小写）、是否已拖入库&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;M 系列芯片卡顿&lt;/strong&gt;：优先用 OpenEmu-Silicon 原生版，而不是官方 Intel 版&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;封面没下载&lt;/strong&gt;：确认网络正常，或右键游戏手动编辑封面&lt;/li&gt;
+&lt;/ul&gt;&lt;/section&gt;
+&lt;section&gt;&lt;h2&gt;关于游戏来源&lt;a href=&quot;#关于游戏来源&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;OpenEmu 本身合法，但 ROM 的获取要留意版权：&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;推荐自己拥有的卡带/光盘的备份（如用 Epilogue GB Operator、RetroDE 等设备 dump）&lt;/li&gt;
+&lt;li&gt;公有领域、免费软件（如 Internet Archive 上的复古免费软件）&lt;/li&gt;
+&lt;li&gt;GOG 等平台销售的复古合集&lt;/li&gt;
+&lt;li&gt;下载非自己拥有的商业游戏 ROM 在法律上属于灰区，不建议在公开场合传播&lt;/li&gt;
+&lt;/ul&gt;&lt;/section&gt;
+&lt;section&gt;&lt;h2&gt;小结&lt;a href=&quot;#小结&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;装好 OpenEmu，把 ROM 拖进去，接上手柄，就能在一个漂亮的游戏库里重温 NES 到 PS1 的经典作品。祝游戏愉快！&lt;/p&gt;&lt;/section&gt;</content:encoded></item><item><title>友链头像本地化：让头像不再加载缓慢</title><link>https://201562.xyz/posts/localize-friend-avatars/</link><guid isPermaLink="true">https://201562.xyz/posts/localize-friend-avatars/</guid><description>友链页面的头像都指向对方站点，加载慢还容易挂。把头像下载到本地、静态转 AVIF、动图原样保留，并写进构建流程自动同步的实践记录。</description><pubDate>Sun, 09 Aug 2026 07:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;&lt;p&gt;友链页面的头像本来都是直接引用对方站点的图片链接，访问慢不说，对方站点一挂头像就裂。这篇记录我把头像全部「本地化」的过程：下载到自己的仓库、静态图转 AVIF 压缩、动图原样保留，并且做成了 &lt;code&gt;npm run build&lt;/code&gt; 自动执行的脚本。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;section&gt;&lt;h2&gt;问题：头像为什么慢&lt;a href=&quot;#问题头像为什么慢&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;我的友链页面（&lt;code&gt;/friends/&lt;/code&gt;）有 9 个友链，头像来源五花八门：&lt;/p&gt;&lt;ul&gt;
 &lt;li&gt;对方自建站点的 &lt;code&gt;logo.png&lt;/code&gt;、&lt;code&gt;favicon.png&lt;/code&gt;；&lt;/li&gt;
 &lt;li&gt;GitHub 头像、QQ 头像接口；&lt;/li&gt;
